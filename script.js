@@ -5,6 +5,11 @@ function colourBlue(e){
     e.target.style.background = 'blue';
 }
 
+function clear(e){
+    const gridItems = document.querySelectorAll('.grid-item');
+    gridItems.forEach((item) => item.style.backgroundColor = 'white');
+}
+
 for (let i = 1; i <= 16*16; i++){
     gridItem = document.createElement('div');
     gridItem.classList.add('grid-item');
@@ -12,3 +17,6 @@ for (let i = 1; i <= 16*16; i++){
     gridItem.textContent = i.toString();
     container.append(gridItem);
 }
+
+const clearButton = document.querySelector('#clear');
+clearButton.addEventListener('click',clear);
