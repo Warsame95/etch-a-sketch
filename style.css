@@ -1,3 +1,5 @@
 .grid-container{
     border: solid black;
+    display: grid;
+    grid-template-columns: repeat(16, auto);
 }
