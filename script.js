@@ -1,8 +1,15 @@
 const container = document.querySelector('.grid-container');
 let gridItem;
+let colourSelector = document.getElementById('colour-picker');
+let colour;
 
-function colourBlue(e){
-    e.target.style.background = 'blue';
+function setColour(e){
+    colour = e.target.value;
+    gridItem.addEventListener('mouseover',colourApply);
+}
+
+function colourApply(e){
+    e.target.style.background = colour;
 }
 
 function clear(e){
@@ -13,8 +20,8 @@ function clear(e){
 for (let i = 1; i <= 16*16; i++){
     gridItem = document.createElement('div');
     gridItem.classList.add('grid-item');
-    gridItem.addEventListener('mouseover',colourBlue);
-    
+    gridItem.addEventListener('mouseover',colourApply);
+    colourSelector.addEventListener('change',setColour)
     container.append(gridItem);
 }
 
