@@ -17,6 +17,11 @@ function clear(e){
     gridItems.forEach((item) => item.style.backgroundColor = 'white');
 }
 
+function erase(e){
+    colour = 'white';
+    gridItem.addEventListener('mouseover',colourApply);
+}
+
 for (let i = 1; i <= 16*16; i++){
     gridItem = document.createElement('div');
     gridItem.classList.add('grid-item');
@@ -24,6 +29,7 @@ for (let i = 1; i <= 16*16; i++){
     colourSelector.addEventListener('change',setColour)
     container.append(gridItem);
 }
-
+const eraseButton = document.getElementById('erase');
+eraseButton.addEventListener('click',erase);
 const clearButton = document.querySelector('#clear');
 clearButton.addEventListener('click',clear);
