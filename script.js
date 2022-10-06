@@ -26,9 +26,9 @@ for (let i = 1; i <= 16*16; i++){
     gridItem = document.createElement('div');
     gridItem.classList.add('grid-item');
     gridItem.addEventListener('mouseover',colourApply);
-    colourSelector.addEventListener('change',setColour)
     container.append(gridItem);
 }
+colourSelector.addEventListener('change',setColour)
 const eraseButton = document.getElementById('erase');
 eraseButton.addEventListener('click',erase);
 const clearButton = document.querySelector('#clear');
