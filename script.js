@@ -38,7 +38,8 @@ function changeGrid(e){
         gridItem.addEventListener('mouseover',colourApply);
         container.append(gridItem);
     }
-
+    const gridLabel = document.querySelector('label');
+    gridLabel.textContent = size+" x "+size;
 }
 
 for (let i = 1; i <= 16*16; i++){
