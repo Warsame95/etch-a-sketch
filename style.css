@@ -24,4 +24,10 @@ button{
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+button:hover{
+    background-color: #555555;
+    color: white;
 }
