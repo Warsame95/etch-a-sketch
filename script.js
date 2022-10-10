@@ -1,13 +1,7 @@
 const container = document.querySelector('.grid-container');
 let gridItem;
 let colourSelector = document.getElementById('colour-picker');
-let colour;
 let randomFlag = true;
-
-function setColour(e){
-    colour = e.target.value;
-    gridItem.addEventListener('mouseover',colourApply);
-}
 
 function colourApply(e){
     if(randomFlag){
@@ -64,7 +58,7 @@ for (let i = 1; i <= 16*16; i++){
 }
 const gridSize = document.getElementById('grid-size');
 gridSize.addEventListener('change',changeGrid);
-colourSelector.addEventListener('change',setColour)
+
 const RGBbutton = document.getElementById('rgb');
 RGBbutton.addEventListener('click',function(e){
     randomFlag = true;
