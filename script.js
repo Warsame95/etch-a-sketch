@@ -2,6 +2,7 @@ const container = document.querySelector('.grid-container');
 let gridItem;
 let colourSelector = document.getElementById('colour-picker');
 let colour;
+let randomFlag = true;
 
 function setColour(e){
     colour = e.target.value;
@@ -9,7 +10,12 @@ function setColour(e){
 }
 
 function colourApply(e){
-    e.target.style.background = randomRGB();
+    if(randomFlag){
+        e.target.style.background = randomRGB();
+    }
+    else{
+        e.target.style.background = 'none';
+    }   
 }
 
 function clear(e){
@@ -18,8 +24,7 @@ function clear(e){
 }
 
 function erase(e){
-    colour = 'white';
-    gridItem.addEventListener('mouseover',colourApply);
+    randomFlag = false;
 }
 
 function randomRGB(){
@@ -61,7 +66,9 @@ const gridSize = document.getElementById('grid-size');
 gridSize.addEventListener('change',changeGrid);
 colourSelector.addEventListener('change',setColour)
 const RGBbutton = document.getElementById('rgb');
-RGBbutton.addEventListener('click',randomRGB);
+RGBbutton.addEventListener('click',function(e){
+    randomFlag = true;
+});
 const eraseButton = document.getElementById('erase');
 eraseButton.addEventListener('click',erase);
 const clearButton = document.querySelector('#clear');
