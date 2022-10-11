@@ -37,3 +37,7 @@ button:hover{
     background-color: #555555;
     color: white;
 }
+
+.range-input{
+    text-align: center;
+}
