@@ -41,3 +41,9 @@ button:hover{
 .range-input{
     text-align: center;
 }
+
+label{
+    display: block;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 23px;
+}
